@@ -10,10 +10,10 @@ class BookCategoryFixters extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        $book = new BookCategory();
-        $manager->persist($book->setTitle('Android')->setSlug('android'));
-        $manager->persist($book->setTitle('IOS')->setSlug('ios'));
-        $manager->persist($book->setTitle('PHP')->setSlug('php'));
+        $bookCategory = new BookCategory();
+        $manager->persist((new BookCategory())->setTitle('Android')->setSlug('android'));
+        $manager->persist((new BookCategory())->setTitle('IOS')->setSlug('ios'));
+        $manager->persist((new BookCategory())->setTitle('PHP')->setSlug('php'));
         $manager->flush();
     }
 }
