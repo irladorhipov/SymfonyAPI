@@ -16,7 +16,7 @@ class BookCategoryServiceTest extends TestCase
         $repository->expects($this->once())
             ->method('findBy')
             ->with([], ['title' => Criteria::ASC])
-            ->willReturn([(new BookCategory())->setTitle('Test')->setSlug('test')]);
+            ->willReturn([(new BookCategory())->setId(8)->setTitle('Test')->setSlug('test')]);
 
         $this->assertTrue(true);
     }
