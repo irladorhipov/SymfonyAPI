@@ -1,0 +1,19 @@
+{
+    "items": [
+        {
+            "id": 7,
+            "title": "Android",
+            "slug": "android"
+        },
+        {
+            "id": 8,
+            "title": "IOS",
+            "slug": "ios"
+        },
+        {
+            "id": 9,
+            "title": "PHP",
+            "slug": "php"
+        }
+    ]
+}

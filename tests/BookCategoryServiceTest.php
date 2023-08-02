@@ -3,6 +3,8 @@
 namespace App\Tests;
 
 use App\Entity\BookCategory;
+use App\Model\BookCategoryListItem;
+use App\Model\BookCategoryListResponse;
 use App\Repository\BookCategoryRepository;
 use App\Service\BookCategoryService;
 use Doctrine\Common\Collections\Criteria;
@@ -18,6 +20,9 @@ class BookCategoryServiceTest extends TestCase
             ->with([], ['title' => Criteria::ASC])
             ->willReturn([(new BookCategory())->setId(8)->setTitle('Test')->setSlug('test')]);
 
-        $this->assertTrue(true);
+        $service = new BookCategoryService($repository);
+        $exptected = new BookCategoryListResponse([new BookCategoryListItem(8, 'Test', 'test')]);
+        
+        $this->assertEquals($exptected, $service->getCategories());
     }
-}
+} 
