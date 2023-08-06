@@ -5,6 +5,7 @@ namespace App\Service;
 use App\Model\BookListResponse;
 use App\Repository\BookCategoryRepository;
 use App\Repository\BookRepository;
+use App\Exception\BookCategoryNotFoundException;
 
 class BookService
 {
@@ -21,7 +22,7 @@ class BookService
     {
         $category = $this->bookCategoryRepository->find($category);
         if (null === $category) {
-            
+            Throw new BookCategoryNotFoundException();
         }
     }
 }
