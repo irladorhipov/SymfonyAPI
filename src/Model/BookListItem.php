@@ -26,6 +26,13 @@ class BookListItem
         return $this->id;
     }
 
+    public function setId(int $id): static
+    {
+        $this->id = $id;
+        
+        return $this;
+    }
+
     public function getTitle(): ?string
     {
         return $this->title;
@@ -73,7 +80,7 @@ class BookListItem
         return $this; 
     }
 
-    public function getMeap(bool $meap): bool
+    public function getMeap(): bool
     {
         return $this->meap;
     }
