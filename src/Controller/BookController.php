@@ -2,9 +2,12 @@
 
 namespace App\Controller;
 
+use App\Exception\BookCategoryNotFoundException;
 use App\Service\BookService;
+use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\Routing\Annotation\Route;
 
 class BookController extends AbstractController
@@ -19,6 +22,11 @@ class BookController extends AbstractController
     #[Route('api/v1/category/{id}/book')]
     public function bookByCategory(int $id): Response
     {
-        return $this->json($this->bookService->getBookByCategory($id));
+        try {
+            return $this->json($this->bookService->getBookByCategory($id));
+        } catch(BookCategoryNotFoundException $exception) {
+            throw new HttpException($exception->getCode(), $exception->getMessage());
+        }
+        
     }
 }

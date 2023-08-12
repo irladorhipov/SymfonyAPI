@@ -31,7 +31,7 @@ class Book
     #[ORM\Column(type: 'date')]
     private DateTimeInterface $publicationDate;
 
-    #[ORM\Column(type: 'boolean', optins: ['default' => false])]
+    #[ORM\Column(type: 'boolean', options: ['default' => false])]
     private bool $meap;
 
     /**
