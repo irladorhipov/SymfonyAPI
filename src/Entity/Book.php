@@ -97,7 +97,7 @@ class Book
         return $this; 
     }
 
-    public function getMeap(bool $meap): bool
+    public function getMeap(): bool
     {
         return $this->meap;
     }
@@ -125,6 +125,18 @@ class Book
     {
         $this->categories = $categories;
 
+        return $this;
+    }
+
+    public function getPublicationDate(): DateTimeInterface
+    {
+        return $this->publicationDate;
+    }
+
+    public function setPublicationDate(int $publicationDate): self
+    {
+        $this->publicationDate = $publicationDate;
+        
         return $this;
     }
 }
