@@ -6,7 +6,7 @@ use App\Entity\BookCategory;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 
-class BookCategoryFixters extends Fixture
+class BookCategoryFixture extends Fixture
 {
     public const ANDROID_CATEGORY = 'android';
 
