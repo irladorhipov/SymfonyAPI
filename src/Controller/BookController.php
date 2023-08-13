@@ -19,7 +19,7 @@ class BookController extends AbstractController
         $this->bookService = $bookService;
     }
 
-    #[Route('api/v1/category/{id}/book')]
+    #[Route('api/v1/category/{id}/books')]
     public function bookByCategory(int $id): Response
     {
         try {
