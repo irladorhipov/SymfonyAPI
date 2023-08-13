@@ -133,7 +133,7 @@ class Book
         return $this->publicationDate;
     }
 
-    public function setPublicationDate(int $publicationDate): self
+    public function setPublicationDate(DateTimeInterface $publicationDate): self
     {
         $this->publicationDate = $publicationDate;
         
