@@ -33,7 +33,7 @@ class BookServiceTest extends TestCase
     {
         $bookRepository = $this->createMock(BookRepository::class);
         $bookRepository->expects($this->once())
-            ->method('findByCategory')
+            ->method('findByCategoryId')
             ->with(130)
             ->willReturn([$this->createBookEntity()]);
 
