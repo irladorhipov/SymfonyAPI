@@ -20,7 +20,7 @@ class BookCategoryService
 
     public function getCategories(): BookCategoryListResponse
     {
-        $categories = $this->bookCategoryRepository->findBy([], ['title' => Criteria::ASC]);
+        $categories = $this->bookCategoryRepository->findAllSortedByTitle();
         $items = array_map(
             fn (BookCategory $bookCategory) => new BookCategoryListItem(
                 $bookCategory->getId(), 
