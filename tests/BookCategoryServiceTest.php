@@ -7,7 +7,6 @@ use App\Model\BookCategoryListItem;
 use App\Model\BookCategoryListResponse;
 use App\Repository\BookCategoryRepository;
 use App\Service\BookCategoryService;
-use Doctrine\Common\Collections\Criteria;
 
 class BookCategoryServiceTest extends AbstractTestCase
 {
@@ -20,8 +19,7 @@ class BookCategoryServiceTest extends AbstractTestCase
 
         $repository = $this->createMock(BookCategoryRepository::class);
         $repository->expects($this->once())
-            ->method('findBy')
-            ->with([], ['title' => Criteria::ASC])
+            ->method('findAllSortedByTitle')
             ->willReturn([]);
 
         $service = new BookCategoryService($repository);
